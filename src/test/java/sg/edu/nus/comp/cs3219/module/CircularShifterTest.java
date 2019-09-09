@@ -36,4 +36,20 @@ public class CircularShifterTest {
 		assertEquals("Tomorrow the Day after", afterShiftLineStorage.get(1).toString());
 	}
 
+	@Test
+	public void test1() {
+		inputLineStorage.addLine("Test No Ignored");
+		assertEquals(3, afterShiftLineStorage.size());
+
+		assertEquals("Test No Ignored", afterShiftLineStorage.get(0).toString());
+		assertEquals("No Ignored Test", afterShiftLineStorage.get(1).toString());
+		assertEquals("Ignored Test No", afterShiftLineStorage.get(2).toString());
+	}
+
+	@Test
+	public void test2() {
+		inputLineStorage.addLine("After The");
+		assertEquals(0, afterShiftLineStorage.size());
+	}
+
 }
